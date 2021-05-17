@@ -3,7 +3,7 @@
         <title>docs | Build a basic website</title>
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <style></style>
-        <link rel="icon" href="css-3-512.png">
+        <link rel="icon" href="../css-3-512.png">
         <link rel="stylesheet" href="../docs.css">
         <link rel="stylesheet" href="../docs-bootstrap.css">
         <script src="https://kit.fontawesome.com/594d35bb81.js" crossorigin="anonymous"></script>
@@ -141,14 +141,14 @@
                     <div class="highlight">
                         <pre>
 &#x3C;script src=&#x22;script.js&#x22;&#x3E;
-/// ERROR! The browser cannot find and will not find <strong>script.js</strong> as there is no ending <strong>&#x3C;/script&#x3E;</strong> tag.</pre>
+ERROR! The browser cannot find and will not find <strong>script.js</strong> as there is no ending <strong>&#x3C;/script&#x3E;</strong> tag.</pre>
                     </div>
                 </li>
                 <li>Incorrect spelling
                     <div class="highlight">
                         <pre>
 &#x3C;centre&#x3E;&#x3C;/centre&#x3E; 
-/// ERROR! It is spelled <strong>"center"</strong> not <strong>"centre"</strong>.</pre>
+ERROR! It is spelled <strong>"center"</strong> not <strong>"centre"</strong>.</pre>
                     </div>
                 </li>
                 <li>Missing bracket
@@ -157,10 +157,27 @@
 .container {
     display: flex;
 
-/// ERROR! There is no ending bracket <strong>}</strong>. "Container" will not be valid.</pre>
+ERROR! There is no ending bracket <strong>}</strong>. "Container" will not be valid.</pre>
                     </div>
                 </li>
+                <li>Missing semicolon
+                    <div class="highlight">
+                        <pre>
+.container {
+    display: flex
+    width: 100%
+}
+
+ERROR! The container will be empty and will not inherit any of the said CSS attributes because there is a missing semicolon <strong>;</strong>.
+                        </pre>
+                    </div>
+                </li>
+                <li>
+                    If you feel something is wrong in your code, you can always find the error.
+                </li>
             </ul>
+            <h2 style="margin-top: 2rem;">Visual Studio Code</h2>
+            <p>Visual studio code is a code-editing software specifically designed for programmers. It can <mark>highlight</mark> errors easily than any other text editor. You can download it here on <a href="https://code.visualstudio.com">their website.</a></p>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
         <script src="../docs.js"></script>
