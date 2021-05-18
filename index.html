@@ -107,12 +107,14 @@
             <div class="highlight">
                 <pre class="chroma">&#x3C;<span class="s">html</span>&#x3E;
     &#x3C;<span class="na">head</span>&#x3E;
+        &#x3C;<span class="na">meta</span> <span class="na">name</span>=<span class="s">&#x22;viewport&#x22;</span> <span class="na">content</span>=<span class="s">&#x22;width=device-width, initial-scale=1.0&#x22;</span>&#x3E;
         &#x3C;<span class="na">title</span>&#x3E;&#x3C;<span class="na">/title</span>&#x3E;
     &#x3C;<span class="na">/head</span>&#x3E;
     &#x3C;<span class="na">body</span>&#x3E;&#x3C;<span class="na">/body</span>&#x3E;
 &#x3C;<span class="s">html</span>&#x3E;</pre>
-            </div>      
-            <p>Inside the <mark>title</mark> tag, you can put your desired title for the page, which will appear on the tabs list of your browser.</p>
+            </div>   
+            <h4>Always add a viewport</h4>   
+            <p>A viewport is the visible page of the browser. This gives the browser instructions on how to control the page's dimensions and scaling. It is needed when you want to build responsive websites, so that elements will auto-resize, auto-reposition with respect to the browser size. Without a viewport, your website may look broken to lower resolution screens or higher resolution screens.</p>
             <h2 id="link-css" style="margin-top: 2rem;">Linking CSS stylesheets</h2>
             <p>To add css stylesheets, add this piece of code on your head tag.</p>
             <div class="highlight">

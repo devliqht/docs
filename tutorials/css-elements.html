@@ -95,6 +95,15 @@
           </nav>
         </aside>
         <div class="container-fluid">
+          <style>
+            .item-docs-2354 {
+                position: fixed;
+                width: fit-content; 
+                height: 35px;
+                background: black;
+            }
+          </style>
+            <div class="item-docs-2354" id="fixedelement" style="display: none;"><span style="color: white; z-index: 10;">Hello, I am a fixed element. Try scrolling the page!</span></div>
             <i class="fab fa-css3-alt fa-4x"></i>
             <h1>docs | build a basic website</h1>
             <h4 class="text-muted" id="docs-date">May 17, 2021</h4>
@@ -129,6 +138,16 @@
     height: fit-content;
 }</pre>
                       </div>
+                      <div class="highlight">
+                        <pre>
+&#x3C;div class=&#x22;container&#x22;&#x3E;
+  &#x3C;span style=&#x22;background: rgba(0,0,0,1); height: 35px; width: 35px;&#x22;&#x3E;&#x3C;/span&#x3E;
+  &#x3C;span style=&#x22;padding: 10px;&#x22;&#x3E;&#x3C;/span&#x3E;
+  &#x3C;span style=&#x22;background: rgba(0,0,0,1); height: 35px; width: 35px;&#x22;&#x3E;&#x3C;/span&#x3E;
+  &#x3C;span style=&#x22;padding: 10px;&#x22;&#x3E;&#x3C;/span&#x3E;
+  &#x3C;span style=&#x22;background: rgba(0,0,0,1); height: 35px; width: 35px;&#x22;&#x3E;&#x3C;/span&#x3E;
+&#x3C;/div&#x3E;</pre>
+                      </div>
                       <p>When we put items on our <mark>.container</mark> class, items are arranged horizontally (by default) and chronologically.</p>
                       <style>
                           .container {
@@ -155,6 +174,7 @@
   flex-direction: column;
 }</pre>
                     </div>
+                    
                     <style>
                         .container-1 {
                           display: flex;
@@ -162,7 +182,7 @@
                           height: fit-content;
                           flex-direction: column;
                       }
-                    </style>
+                    </style>                   
                         <div class="container-1">
                         <span style="background: rgba(0,0,0,1); height: 35px; width: 35px;"></span>
                         <span style="padding: 10px;"></span>
@@ -170,6 +190,8 @@
                         <span style="padding: 10px;"></span>
                         <span style="background: rgba(0,0,0,1); height: 35px; width: 35px;"></span>
                         </div>
+                        <p></p>
+                        <p>No other flex attributes shall be needed when building a website, as they are only "fillers". You don't really need them. All you need is <strong>flex-direction</strong> CSS attribute.</p>
                         <h2 style="margin-top: 2rem;">display: none</h2>
                         <p>It is what it says. <strong>display: none</strong> literally hides the element. This is useful when on responsive websites, you want to hide that element when resized or in mobile.</p>
                         <h2>display: block</h2>
@@ -186,7 +208,162 @@
                   </h2>
                   <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                      
+                      <p>There are 3 common types of position:</p>
+                      <ul>
+                        <li>position: absolute</li>
+                        <li>position: relative</li>
+                        <li>position: fixed</li>
+                      </ul>
+                      <p><strong>position: absolute</strong> and <strong>position: fixed</strong> are similar. Both can interchange and you won't see that much difference. However, <strong>position: relative</strong> is interesting.</p>
+                      <p>For the sake of simplicity, we will only use <strong>position: fixed</strong> for both absolute and fixed examples.</p>
+                      <h2>position: fixed</h2>
+                      <p>Like the name says, an element with <strong>position: fixed</strong> is fixed with respect to the viewport. It stays where it is, even if the document is scrolled.</p>
+                      <h4>Let's view an example:</h4>
+                      <div class="highlight">
+                        <pre>
+.item {
+    position: fixed;
+    width: fit-content; 
+    height: 35px;
+    background: black;
+}</pre>
+                      </div>
+                      <button onclick="displayFixed();">Click me to display a fixed element</button>
+                      <script>
+                        function displayFixed() {
+                          var fixedelement = document.getElementById("fixedelement");
+                          fixedelement.style.display = "block";
+                          setTimeout(function(){fixedelement.style.display = "none";},10400);
+                        }
+                      </script>
+                      <p>As you can see, the fixed element stays where it is positioned.</p>
+                      <h2>position: relative</h2>
+                      <p>When an element inherits the <strong>position: relative</strong> css attribute, it means that the element will be positioned relative (or inside) to it's parent container. Elements with <strong>position: relative</strong> is the same as the default/normal position, but you can use css attributes like <mark>top: bottom: left: right:</mark> to move the element.</p>
+                      <p>Don't get it? Let's view an example.</p>
+                      <h4>Relative examples</h4>
+                      <div class="highlight">
+                        <pre>
+.item {
+    position: relative;
+    width: fit-content; 
+    height: 35px;
+    background: black;
+}
+
+.parent-container {
+    border: solid 2px black;
+    width: 50px;
+    height: 50px;
+}</pre>
+                      </div>
+                      <style>
+                        .item-docs-9485 {
+                            position: relative;
+                            width: fit-content; 
+                            height: 35px;
+                            background: black;
+                        }
+                        .item-docs-2958 {
+                            width: fit-content; 
+                            height: 35px;
+                            background: black;
+                        }
+
+                        .parent-container-2495 {
+                            border: solid 2px black;
+                            width: 300px;
+                            height: 100px;
+                        }
+                      </style>
+                      <div class="highlight">
+                        <pre>
+&#x3C;div class=&#x22;parent-container&#x22;&#x3E;
+  &#x3C;div class=&#x22;item&#x22;&#x3E;&#x3C;span style=&#x22;color: white;&#x22;&#x3E;I am a relative item!&#x3C;/span&#x3E;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</pre>
+                      </div>
+                      <div class="parent-container-2495">
+                        <div class="item-docs-9485"><span style="color: white;">I am a relative item!</span></div>
+                      </div>
+                      <p></p>
+                      <h2>Moving elements</h2>
+                      <p>The biggest advantage when an element inherits the <mark>position:</mark> css attribute is that <strong>you can move it freely, anywhere.</strong></p>
+                      <p>Unlike elements with the <mark>position:</mark> css attribute, you can't move them <strong>freely</strong>. You would need to go through the hassle of padding and margin trial and errors, and when inspecting the website, it will look very bad and unorganized.</p>
+                      <h4>How do we move elements?</h4>
+                      <p>We will use 4 css attributes to move elements: <mark>top, bottom, left, and right.</mark> Yes, those are the names. <strong>Let's view some examples:</strong></p>
+                      <h1>Left</h1>
+                      <div class="highlight">
+                        <pre>
+.item {
+    position: relative;
+    width: fit-content; 
+    height: 35px;
+    background: black;
+    left: 10px; // This means that our element will be offset/move by 10px from the left 
+}
+
+.parent-container {
+    border: solid 2px black;
+    width: 50px;
+    height: 50px;
+}</pre>
+                      </div>
+                      <style>
+                        .item-docs-399 {
+                            position: relative;
+                            width: fit-content; 
+                            height: 35px;
+                            background: black;
+                            left: 10px;
+                        }
+                        .item-docs-499 {
+                          position: relative;
+                          width: fit-content; 
+                          height: 35px;
+                          background: black;
+                          right: 10px;
+                        }
+                      </style>
+                      <div class="parent-container-2495">
+                        <div class="item-docs-399"><span style="color: white;">I am a relative item with left: 10px;</span></div>
+                      </div>
+                      <p></p>
+                      <h1>Right</h1>
+                      <div class="highlight">
+                        <pre>
+.item {
+    position: relative;
+    width: fit-content; 
+    height: 35px;
+    background: black;
+    right: 10px; // This means that our element will be offset/move by 10px from the <strong>right.</strong>
+}
+
+.parent-container {
+    border: solid 2px black;
+    width: 50px;
+    height: 50px;
+}</pre>
+                      </div>
+                      <div class="parent-container-2495">
+                        <div class="item-docs-499"><span style="color: white;">I am a relative item with right: 10px;</span></div>
+                      </div>
+                      <p>As you can see, our item is past the border. That is <mark>normal</mark>. Just make sure to use these css attributes properly to avoid that. As with <mark>top and bottom</mark>, it does the same job as <mark>left and right</mark>.</p>
+                      <h2>Tips and tricks, what to avoid</h2>
+                      <ul>
+                        <li>Sidebars and navigation bars should always have <mark>position: fixed</mark>. Because you don't want them to disappear on-scroll. You want them to be always accessible by the user.</li>
+                        <li>Only use <mark>position: relative</mark> on elements <strong>inside a container</strong>. You don't want elements to be adjusting and floating around.</li>
+                        <li>It is recommended to use <mark>position:</mark> when applicable. Padding and margin just looks messy.</li>
+                      </ul>
+                      <h1>FAQs:</h1>
+                      <h4>When to use percentages or pixels?</h4>
+                      <p>- Use percentages when you want that container to always stay on screen, and you want that container to auto-adjust and auto-size. For example, if a container has a width of <strong>30%</strong>, it's size will shrink with the browser size. Let's view an example:</p>
+                      <div style="width: 30%; background: black; height: 35px;"><span style="color: white;">I am a container with 30% width.</span></div>
+                      <p></p>
+                      <p>Try resizing the browser. See the different between pixels and percentages.</p>
+                      <div style="width: 300px; background: black; height: 35px;"><span style="color: white;">I am a container with 300px width.</span></div>
+                      <p>As you can see, the container with the percentage width resizes with accord to the browser size, while the container with pixel width keeps and stays it's width.</p>
+                      <h4>Why not include float: ?</h4>
+                      <p>For me, you don't really need the float css attribute unless very needed so. You can achieve the same results with using display flex.</p>
                     </div>
                   </div>
                 </div>
